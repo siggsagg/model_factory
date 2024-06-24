@@ -1,0 +1,21 @@
+FROM command-r-plus:104b-q4_0
+
+TEMPLATE """"{{ if .System }}<|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|>{{ .System }}<|END_OF_TURN_TOKEN|>{{ end }}{{ if .Prompt }}<|START_OF_TURN_TOKEN|><|USER_TOKEN|>{{ .Prompt }}<|END_OF_TURN_TOKEN|>{{ end }}<|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|>{{ .Response }}<|END_OF_TURN_TOKEN|>"
+"""
+
+# Set parameters
+PARAMETER stop Result
+
+# Sets a custom system message to specify the behavior of the chat assistant
+# Leaving it blank for now.
+SYSTEM """"""
+
+# How to load the model?
+# 1. Open a new terminal ( Git Bash, Command Prompt or similar || PowerShell doesn't work! )
+# 2. Spawn poetry shell with the command: poetry shell
+# 2. cd to ./model_setup/ 
+# 4. Make the .sh file executable with the command: chmod +x o_command_r_plus_104b_128k_q4-create_model.sh
+# 5. Run the .sh file with the command: ./o_command_r_plus_104b_128k_q4-create_model.sh
+
+# Model Card: https://ollama.com/library/command-r-plus:104b-q4_0
+# ModelFile docs: https://github.com/ollama/ollama/blob/main/docs/modelfile.md

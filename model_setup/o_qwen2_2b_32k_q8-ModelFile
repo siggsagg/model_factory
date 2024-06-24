@@ -1,0 +1,26 @@
+FROM qwen2:1.5b-instruct-q8_0
+
+TEMPLATE """"{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ if .Prompt }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+{{ end }}<|im_start|>assistant
+{{ .Response }}<|im_end|>"
+"""
+
+# Set parameters
+PARAMETER stop Result
+
+# Sets a custom system message to specify the behavior of the chat assistant
+# Leaving it blank for now.
+SYSTEM """"""
+
+# How to load the model?
+# 1. Open a new terminal ( Git Bash, Command Prompt or similar || PowerShell doesn't work! )
+# 2. Spawn poetry shell with the command: poetry shell
+# 2. cd to ./model_setup/ 
+# 4. Make the .sh file executable with the command: chmod +x o_qwen2_2b_32k_q8-create_model.sh
+# 5. Run the .sh file with the command: ./o_qwen2_2b_32k_q8-create_model.sh
+
+# Model Card: https://ollama.com/library/qwen2:1.5b-instruct-q8_0
+# ModelFile docs: https://github.com/ollama/ollama/blob/main/docs/modelfile.md

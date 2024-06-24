@@ -1,0 +1,27 @@
+FROM llama3:70b-instruct-q6_K
+
+TEMPLATE """"{{ if .System }}<|start_header_id|>system<|end_header_id|>
+
+{{ .System }}<|eot_id|>{{ end }}{{ if .Prompt }}<|start_header_id|>user<|end_header_id|>
+
+{{ .Prompt }}<|eot_id|>{{ end }}<|start_header_id|>assistant<|end_header_id|>
+
+{{ .Response }}<|eot_id|>"
+"""
+
+# Set parameters
+PARAMETER stop Result
+
+# Sets a custom system message to specify the behavior of the chat assistant
+# Leaving it blank for now.
+SYSTEM """"""
+
+# How to load the model?
+# 1. Open a new terminal ( Git Bash, Command Prompt or similar || PowerShell doesn't work! )
+# 2. Spawn poetry shell with the command: poetry shell
+# 2. cd to ./model_setup/ 
+# 4. Make the .sh file executable with the command: chmod +x o_llama3_70b_8k_q6-create_model.sh
+# 5. Run the .sh file with the command: ./o_llama3_70b_8k_q6-create_model.sh
+
+# Model Card: https://ollama.com/library/llama3:70b-instruct-q6_K
+# ModelFile docs: https://github.com/ollama/ollama/blob/main/docs/modelfile.md

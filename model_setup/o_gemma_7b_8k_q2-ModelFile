@@ -1,0 +1,24 @@
+FROM gemma:7b-instruct-v1.1-q2_K
+
+TEMPLATE """"user
+{{ if .System }}{{ .System }} {{ end }}{{ .Prompt }}
+model
+{{ .Response }}"
+"""
+
+# Set parameters
+PARAMETER stop Result
+
+# Sets a custom system message to specify the behavior of the chat assistant
+# Leaving it blank for now.
+SYSTEM """"""
+
+# How to load the model?
+# 1. Open a new terminal ( Git Bash, Command Prompt or similar || PowerShell doesn't work! )
+# 2. Spawn poetry shell with the command: poetry shell
+# 2. cd to ./model_setup/ 
+# 4. Make the .sh file executable with the command: chmod +x o_gemma_7b_8k_q2-create_model.sh
+# 5. Run the .sh file with the command: ./o_gemma_7b_8k_q2-create_model.sh
+
+# Model Card: https://ollama.com/library/gemma:7b-instruct-v1.1-q2_K
+# ModelFile docs: https://github.com/ollama/ollama/blob/main/docs/modelfile.md
