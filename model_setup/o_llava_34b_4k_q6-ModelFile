@@ -1,10 +1,10 @@
 FROM llava:34b-v1.6-q6_K
 
-TEMPLATE """"<|im_start|>system
+TEMPLATE """<|im_start|>system
 {{ .System }}<|im_end|>
 <|im_start|>user
 {{ .Prompt }}<|im_end|>
-<|im_start|>assistant"
+<|im_start|>assistant
 """
 
 # Set parameters

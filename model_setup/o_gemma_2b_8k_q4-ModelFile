@@ -1,9 +1,9 @@
 FROM gemma:2b-instruct-v1.1-q4_0
 
-TEMPLATE """"user
+TEMPLATE """user
 {{ if .System }}{{ .System }} {{ end }}{{ .Prompt }}
 model
-{{ .Response }}"
+{{ .Response }}
 """
 
 # Set parameters

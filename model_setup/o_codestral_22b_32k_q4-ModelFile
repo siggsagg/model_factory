@@ -1,6 +1,6 @@
 FROM codestral:22b-v0.1-q4_0
 
-TEMPLATE """"[INST] {{ if .System }}{{ .System }} {{ end }}{{ .Prompt }} [/INST] {{ .Response }}"
+TEMPLATE """[INST] {{ if .System }}{{ .System }} {{ end }}{{ .Prompt }} [/INST] {{ .Response }}
 """
 
 # Set parameters

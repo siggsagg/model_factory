@@ -1,6 +1,6 @@
 FROM mistral:7b-instruct-v0.3-q4_0
 
-TEMPLATE """"[INST] {{ if .System }}{{ .System }} {{ end }}{{ .Prompt }} [/INST]"
+TEMPLATE """[INST] {{ if .System }}{{ .System }} {{ end }}{{ .Prompt }} [/INST]
 """
 
 # Set parameters

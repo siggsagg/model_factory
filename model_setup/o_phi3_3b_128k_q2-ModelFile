@@ -1,11 +1,11 @@
 FROM phi3:3.8b-mini-128k-instruct-q2_K
 
-TEMPLATE """"{{ if .System }}<|system|>
+TEMPLATE """{{ if .System }}<|system|>
 {{ .System }}<|end|>
 {{ end }}{{ if .Prompt }}<|user|>
 {{ .Prompt }}<|end|>
 {{ end }}<|assistant|>
-{{ .Response }}<|end|>"
+{{ .Response }}<|end|>
 """
 
 # Set parameters

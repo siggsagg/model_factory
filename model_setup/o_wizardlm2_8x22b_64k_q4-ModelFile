@@ -1,6 +1,6 @@
 FROM wizardlm2:8x22b-q4_0
 
-TEMPLATE """"{{ if .System }}{{ .System }} {{ end }}{{ if .Prompt }}USER: {{ .Prompt }} {{ end }}ASSISTANT: {{ .Response }}"
+TEMPLATE """{{ if .System }}{{ .System }} {{ end }}{{ if .Prompt }}USER: {{ .Prompt }} {{ end }}ASSISTANT: {{ .Response }}
 """
 
 # Set parameters

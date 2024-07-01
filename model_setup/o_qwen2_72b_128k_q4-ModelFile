@@ -1,11 +1,11 @@
 FROM qwen2:72b-instruct-q4_K_M
 
-TEMPLATE """"{{ if .System }}<|im_start|>system
+TEMPLATE """{{ if .System }}<|im_start|>system
 {{ .System }}<|im_end|>
 {{ end }}{{ if .Prompt }}<|im_start|>user
 {{ .Prompt }}<|im_end|>
 {{ end }}<|im_start|>assistant
-{{ .Response }}<|im_end|>"
+{{ .Response }}<|im_end|>
 """
 
 # Set parameters

@@ -1,11 +1,11 @@
 FROM phi3:14b-medium-4k-instruct-q6_K
 
-TEMPLATE """"{{ if .System }}<|system|>
+TEMPLATE """{{ if .System }}<|system|>
 {{ .System }}<|end|>
 {{ end }}{{ if .Prompt }}<|user|>
 {{ .Prompt }}<|end|>
 {{ end }}<|assistant|>
-{{ .Response }}<|end|>"
+{{ .Response }}<|end|>
 """
 
 # Set parameters

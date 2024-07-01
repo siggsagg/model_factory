@@ -1,8 +1,8 @@
 FROM llava:13b-v1.6-vicuna-q6_K
 
-TEMPLATE """"{{ .System }}
+TEMPLATE """{{ .System }}
 USER: {{ .Prompt }}
-ASSSISTANT:"
+ASSSISTANT:
 """
 
 # Set parameters

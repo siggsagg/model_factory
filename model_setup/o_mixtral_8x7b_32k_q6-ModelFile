@@ -1,6 +1,6 @@
 FROM mixtral:8x7b-instruct-v0.1-q6_K
 
-TEMPLATE """"[INST] {{ if .System }}{{ .System }} {{ end }}{{ .Prompt }} [/INST]"
+TEMPLATE """[INST] {{ if .System }}{{ .System }} {{ end }}{{ .Prompt }} [/INST]
 """
 
 # Set parameters

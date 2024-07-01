@@ -1,9 +1,9 @@
 FROM codegemma:7b-code-q6_K
 
-TEMPLATE """"user
+TEMPLATE """user
 {{ if .System }}{{ .System }} {{ end }}{{ .Prompt }}
 model
-{{ .Response }}"
+{{ .Response }}
 """
 
 # Set parameters
